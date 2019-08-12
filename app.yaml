@@ -1,0 +1,20 @@
+# Use the PHP 7.3 runtime (BETA) by replacing "php72" below with "php73"
+runtime: php
+env: flex
+
+automatic_scaling:
+ max_num_instances: 1
+ min_num_instances: 1
+
+resources:
+ cpu: 2
+ memory_gb: 2.3
+ disk_size_gb: 10
+
+env_variables:
+ APP_LOG: errorlog
+ MYSQL_USER: 'root'
+ MYSQL_PASSWORD: 'finalsdatabase'
+ MYSQL_DSN: 'mysql:dbname=dbbookshare;unix_socket=/cloudsql/imposing-eye-247106:australia-southeast1:finalsdatabase'
+beta_settings:
+ cloud_sql_instances: 'imposing-eye-247106:australia-southeast1:finalsdatabase'
