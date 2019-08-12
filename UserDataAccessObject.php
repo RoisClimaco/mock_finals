@@ -30,7 +30,7 @@ private $instancename = "/cloudsql/mockfinalsphp:australia-southeast1:finalsdata
       }
 
     public function register(User $checkUser){
-          $mysqli =  mysqli_connect(null, $this->userName, $this->userPassword, $this->database, null , $this->instancename);
+          $mysqli = mysqli_connect(null, $this->userName, $this->userPassword, $this->database, null , $this->instancename);
           if ($mysqli->connect_error) {
               		die("Connection failed: " . $mysqli->connect_error);
           	}
