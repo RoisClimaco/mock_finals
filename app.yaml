@@ -11,6 +11,9 @@ resources:
  memory_gb: 2.3
  disk_size_gb: 10
 
+runtime_config:
+ document_root: .
+ 
 env_variables:
  APP_LOG: errorlog
  MYSQL_USER: 'root'
