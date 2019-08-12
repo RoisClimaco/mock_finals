@@ -10,6 +10,9 @@ resources:
   disk_size_gb: 2
   memory_gb: 2
 
+runtime_config:
+  document_root: .
+
 env_variables:
   MYSQL_USER: root
   MYSQL_PASSWORD: finalsdatabase

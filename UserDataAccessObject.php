@@ -10,9 +10,8 @@ private $instancename = "/cloudsql/mockfinalsphp:australia-southeast1:finalsdata
 
   public function loginCheck(User $checkUser){
         $mysqli =  mysqli_connect($this->host, $this->userName, $this->userPassword, $this->database, null , $this->instancename);
-        $query = "SELECT `username` FROM tblusers where `username` = '".$checkUser->getUsername()."' and `password` = '".$checkUser->getPassword()."'";
+        $query = "SELECT `username` FROM `finalsdatabase`.`tblusers` where `username` = '".$checkUser->getUsername()."' and `password` = '".$checkUser->getPassword()."'";
         $result = mysqli_query($mysqli,$query);
-        mysqli_close($mysqli);
         while($row = mysqli_fetch_row($result)){
           return 1;
         }
@@ -24,7 +23,6 @@ private $instancename = "/cloudsql/mockfinalsphp:australia-southeast1:finalsdata
           $mysqli =  mysqli_connect($this->host, $this->userName, $this->userPassword, $this->database, null , $this->instancename);
           $query = "INSERT INTO `finalsdatabase`.`tblusers` (`username`, `password`, `email`) VALUES ('".$checkUser->getUsername()."', '".$checkUser->getPassword()."', '".$checkUser->getEmail()."')";
           $result = mysqli_query($mysqli,$query);
-          mysqli_close($mysqli);
           echo mysqli_error(mysqli);
           return 0;
         }
