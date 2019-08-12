@@ -16,6 +16,7 @@ private $instancename = "/cloudsql/mockfinalsphp:australia-southeast1:finalsdata
           return 1;
         }
         echo $query;
+        echo mysqli_error($mysqli);
         return 0;
       }
 
@@ -23,7 +24,7 @@ private $instancename = "/cloudsql/mockfinalsphp:australia-southeast1:finalsdata
           $mysqli =  mysqli_connect($this->host, $this->userName, $this->userPassword, $this->database, null , $this->instancename);
           $query = "INSERT INTO `finalsdatabase`.`tblusers` (`username`, `password`, `email`) VALUES ('".$checkUser->getUsername()."', '".$checkUser->getPassword()."', '".$checkUser->getEmail()."')";
           $result = mysqli_query($mysqli,$query);
-          echo mysqli_error(mysqli);
+          echo mysqli_error($mysqli);
           return 0;
         }
       }
