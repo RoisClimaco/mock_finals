@@ -13,11 +13,11 @@ resources:
 
 runtime_config:
  document_root: .
- 
+
 env_variables:
  APP_LOG: errorlog
  MYSQL_USER: 'root'
  MYSQL_PASSWORD: 'finalsdatabase'
- MYSQL_DSN: 'mysql:dbname=dbbookshare;unix_socket=/cloudsql/imposing-eye-247106:australia-southeast1:finalsdatabase'
+ MYSQL_DSN: 'mysql:dbname=finalsdatabase;unix_socket=/cloudsql/mockfinalsphp:australia-southeast1:finalsdatabase'
 beta_settings:
- cloud_sql_instances: 'imposing-eye-247106:australia-southeast1:finalsdatabase'
+ cloud_sql_instances: 'mockfinalsphp:australia-southeast1:finalsdatabase'
