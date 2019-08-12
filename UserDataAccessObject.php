@@ -13,7 +13,7 @@ private $instancename = "/cloudsql/mockfinalsphp:australia-southeast1:finalsdata
   }
 
   public function loginCheck(User $checkUser){
-        $mysqli =  mysqli_connect(null, $this->userName, $this->userPassword, $this->database, null , $this->instancename);
+        $mysqli = mysqli_connect(null, $this->userName, $this->userPassword, $this->database, null , $this->instancename);
         if ($mysqli->connect_error) {
             		die("Connection failed: " . $mysqli->connect_error);
         	}
@@ -23,6 +23,7 @@ private $instancename = "/cloudsql/mockfinalsphp:australia-southeast1:finalsdata
           echo $row;
           return 1;
         }
+        echo $result;
         echo $query;
         echo mysqli_error($mysqli);
         return 0;
